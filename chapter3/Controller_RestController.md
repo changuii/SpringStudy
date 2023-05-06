@@ -54,3 +54,21 @@ View Resolver
 
 앞의 대부분은 자동으로 되고 우리가 코드를 구성하는 부분은 Controller와 Model부분을 작성한다.
 
+
+## Controller와 RequestMapping 실습
+
+
+## Controller와 RequestMapping
+
+요청 경로를 설정하기 위해 Controller Annotation을 사용하자.  
+RequestMpping을 이용해 경로에 따라 실행될 함수를 지정할 수 있다.  
+Method 별로 별도의 Annotation이 존재한다.  
+- GetMapping, PostMapping 등..  
+
+HTML외에 데이터 전송을 위해 Body와 MediaType을 설정할 수 있다.
+- View Resolver를 거치지 않고 바로 데이터를 클라이언트에게 돌려준다. (6번 경로)  
+
+RestController  
+- 간단하게, Controller + ResponseBody  
+
+기본적으로 어떠한 형태의 응답이든 데이터의 일종이다.  
