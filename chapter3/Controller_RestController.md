@@ -57,6 +57,84 @@ View Resolver
 
 ## Controller와 RequestMapping 실습
 
+어노테이션  
+
+@Controller  
+- Class를 Controller로 선언
+```java
+@Controller
+```
+
+@RequestParam()  
+- id를 URL로 파라미터로 가져온다.
+- Query로 id값을 가져온다. ?name="value"
+```java
+@RequestParam(name = "id", required = false, defaultValue = "")
+```
+
+@RequestMapping
+- request가 들어왔을 때 매핑해주는 값
+```java
+ @RequestMapping(
+            value = "hello",    // 요청 URL의 PATH loaclhost:8080/hello
+            method = RequestMethod.GET // HTTP GET메소드, URL주소로 문서를 가져오는 방식은 GET
+    )
+```
+
+@GetMapping()
+- 메소드를 GET으로 고정한다.
+```java
+@GetMapping(    // 메소드가 GET으로 고정되어있다.
+            value = "hello/{id}"   
+    )
+```
+
+@PathVariable
+- URL 경로를 통해 변수를 가져온다.
+```java
+@PathVariable("id")
+```
+
+@ResponseBody
+- Controller를 통해 응답하는 값을 Body로 지정한다.
+- Controller는 기본적으로 html을 반환하기 위해 경로를 지정해준다.
+- 따라서 어떤 데이터를 반환하고자 할 때(ex: 객체, 이미지 등..) 함수앞에 작성해주어야 한다.
+- Spring에서는 객체를 응답할 때 일반적으로 통용되는 데이터인 JSON, XML 형태로 전달해줄 수 있다.
+```java
+public @ResponseBody SamplePayload getProfile()
+```
+
+@RestController
+- 해당 클래스를 RestController로 지정한다.
+- RestController는 기본적으로 데이터를 응답하기위해 사용하기 때문에 ResponsBody를 사용할 필요가 없다.
+```java
+@RestController
+```
+
+@RequestMapping 클래스
+- RequestMapping은 클래스에도 지정할 수 있다.
+- 클래스에 지정된다면 해당 클래스 내의 모든 함수들은 해당 디렉터리의 하위 디렉터리로 지정된다.
+- 밑의 예시의 경우에 localhost:8080/rest/해당 클래스의 메소드 디렉터리
+```java
+@RequestMapping("/rest")  // class에도 RequestMapping(디렉터리)를 작성가능.
+public class SampleRestController
+```
+
+이미지 또는 비디오 응답  
+- Spring에서 이미지 또는 비디오는 바이트로 구성되기 때문에 byte[]형태로 반환해준다.
+- MediaType을 지정해주어야 한다.
+```java
+@GetMapping(
+            value = "/sample-image",
+            produces = MediaType.IMAGE_PNG_VALUE  // MediaType 선택
+    )
+    public byte[] sampleImage() throws IOException{  // 이미지와 비디오는 기본적으로 다 byte로 구성되기 때문에 byte형태로 제공한다.
+        InputStream inputStream = getClass().getResourceAsStream("/static/spring-boot.png");  // 들어오는 문자열을 resources 폴더 안에서 찾아간다.
+
+        return inputStream.readAllBytes();
+    }
+```
+
 
 ## Controller와 RequestMapping
 
