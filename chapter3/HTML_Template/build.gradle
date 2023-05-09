@@ -13,10 +13,10 @@ repositories {
 }
 
 dependencies {
-	//implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'  // Thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'  // Thymeleaf
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'javax.servlet:jstl'  // JSP
-	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'  // JSP
+	/*implementation 'javax.servlet:jstl'  // JSP
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'  // JSP*/
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

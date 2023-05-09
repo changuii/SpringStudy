@@ -38,4 +38,29 @@ dependencies{
 ```
 
 
+## React, Vue, Node와 Spring Boot
+
+Framework 선택의 기준  
+
+React (JavaScript library)  
+- Building user interface
+- UI를 만들기 위한 라이브러리 / 프레임워크 
+- HTML을 효율적으로 작성하기 위한 기술
+
+Vue.js
+- Building user interface
+- UI를 만들기 위한 라이브러리 / 프레임워크 
+- HTML을 효율적으로 작성하기 위한 기술
+
+Node.js
+- JavaScript를 컴퓨터 시스템에서 실행
+- back-end JavaScript runtime environment
+- Javascript를 브라우저 외부에서 사용하기 위한 기술
+- 일반적으로 웹 어플리케이션을 만드는데 활용
+
+Front-End  
+- React, Vue.js, JSP, Thymeleaf
+
+Back-End
+- Node.js, Spring-Boot
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="htpp://www.thymeleaf.org"
+lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profiles</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <c:forEach items="${profiles}" var="profile">
+                <tr>
+                    <td>${profile.Name}</td>
+                    <td>${profile.Age}</td>
+                    <td>${profile.Occupation}</td>
+                </tr>
+            </c:forEach> -->
+            <tr th:each="profile: ${profiles}">
+                <td th:text="${profile.name}">
+                <td th:text="${profile.age}">
+                <td th:text="${profile.occupation}">
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
