@@ -10,7 +10,7 @@ import java.util.List;
 
 @Controller
 @ResponseBody  // class의 모든 함수들이 ResponseBody
-@RequestMapping("post")
+//@RequestMapping("post")
 public class PostController {
     private static final Logger logger = LoggerFactory.getLogger(PostController.class);
     private final List<PostDto> postList;
