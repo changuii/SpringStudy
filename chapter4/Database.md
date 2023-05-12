@@ -46,6 +46,6 @@ MySQL : 서버에 접속하기 위한 클라이언트
 
 
 Users and privileges
-- `ckddml7410
+- _ckddml7410
 
 
