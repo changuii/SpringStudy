@@ -50,7 +50,7 @@ public class BoardController {
        return ResponseEntity.noContent().build();
    }
 
-   @DeleteMapping("")
+   @DeleteMapping("{id}")
    public ResponseEntity<?> deleteBoard(
            @PathVariable("id") Long id
    ){

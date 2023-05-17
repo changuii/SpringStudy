@@ -37,7 +37,12 @@ public class inMemoryBoardRepository implements  BoardRepository{
 
     @Override
     public boolean update(Long id, BoardDto dto) {
-        return false;
+        if(dto.getName() == null) return false;
+        if(!memory.containsKey(id))
+            return false;
+        BoardDto boardDto = memory.get(id);
+        boardDto.setName(dto.getName());
+        return true;
     }
 
     @Override

@@ -6,11 +6,11 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 
 public interface PostRepository {
-    PostDto createPost(PostDto dto);
-    PostDto readPost(Long id);
-    Collection<PostDto> readPostAll();
-    boolean updatePost(Long id, PostDto dto);
-    boolean deletePost(Long id);
+    PostDto createPost(Long boardId, PostDto dto);
+    PostDto readPost(Long boardId, Long postId);
+    Collection<PostDto> readPostAll(Long boardId);
+    boolean updatePost(Long boardId, Long postId, PostDto dto);
+    boolean deletePost(Long boardId, Long postId, String password);
 
 
 

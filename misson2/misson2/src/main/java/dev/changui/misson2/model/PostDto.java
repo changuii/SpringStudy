@@ -8,14 +8,24 @@ public class PostDto {
     private String content;
     private String writer;
     private String password;
+    private Long boardId;
 
     public PostDto(){}
-    public PostDto(Long id, String title, String content, String writer, String password) {
+    public PostDto(Long id, String title, String content, String writer, String password, Long boardId) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.writer = writer;
         this.password = password;
+        this.boardId = boardId;
+    }
+
+    public Long getBoardId() {
+        return boardId;
+    }
+
+    public void setBoardId(Long boardId) {
+        this.boardId = boardId;
     }
 
     public Long getId() {
@@ -66,6 +76,18 @@ public class PostDto {
                 ", content='" + content + '\'' +
                 ", writer='" + writer + '\'' +
                 ", password='" + password + '\'' +
+                ", boardId=" + boardId +
                 '}';
+    }
+
+    public PostDto passwordMasked(){
+        return new PostDto(
+                this.id,
+                this.title,
+                this.content,
+                this.writer,
+                "*****",
+                this.boardId
+        );
     }
 }
