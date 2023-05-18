@@ -75,4 +75,13 @@ public class MediaController {
         );
     }
 
+    @RequestMapping("test-log")
+    public  void testLog(){
+        logger.trace("a trace message");
+        logger.debug("a debug message");
+        logger.info("a info message");
+        logger.warn("a warn message");
+        logger.error("a error message");
+    }
+
 }
