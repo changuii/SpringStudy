@@ -1,9 +1,15 @@
 package dev.changui.jpa;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class PostDto {
     private int id;
+    @NotNull(message="title not null")
     private String title;
+    @Size(max = 40, message="content max size is 40")
     private String content;
+    @Size(min =3, max=10, message= "writer size between 3 ~ 10")
     private String writer;
     private int boardId;
 
