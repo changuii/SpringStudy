@@ -17,4 +17,4 @@ spring:
 
 logging:
   level:
-    dev.changui: trace
+    dev.changui.jpa.interceptor: trace
