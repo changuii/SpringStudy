@@ -1,6 +1,7 @@
-package com.example.database;
+package com.example.database.dao;
 
 
+import com.example.database.repository.BasicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -9,11 +10,14 @@ import org.springframework.stereotype.Repository;
 public class DAO {
 
     private final JdbcTemplate jdbcTemplate;
+    private final BasicRepository basicRepository;
 
     public DAO(
             @Autowired JdbcTemplate jdbcTemplate
+            @Autowired BasicRepository basicRepository
     ){
         this.jdbcTemplate = jdbcTemplate;
+        this.basicRepository = basicRepository;
     }
 
     public void createTable(){
